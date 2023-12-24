@@ -1,0 +1,9 @@
+<h1>Posts</h1>
+
+<ul>
+  @for (post of posts$ | async; track post.id) {
+    <li>
+      <a [routerLink]="'/posts/' + post.id">{{ post.title }}</a>
+    </li>
+  }
+</ul>
