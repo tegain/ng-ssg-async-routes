@@ -20,11 +20,6 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - name: Fetch Data to File
-        uses: gautemo/fetch-api-data-action@1.1.0
-        with:
-          url: 'https://api.jsonbin.io/v3/qs/65888398dc746540188845b4'
-          file: '/home/runner/work/ng-ssg-async-routes/ng-ssg-async-routes/src/assets/routes.txt'
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -33,5 +28,10 @@ jobs:
           cache: 'npm'
       - name: Install
         run: npm ci
+      - name: Fetch Data to File
+        uses: gautemo/fetch-api-data-action@1.1.0
+        with:
+          url: 'https://api.jsonbin.io/v3/qs/65888398dc746540188845b4'
+          file: '/home/runner/work/ng-ssg-async-routes/ng-ssg-async-routes/src/assets/routes.txt'
       - name: Build
         run: npm run build --if-present
