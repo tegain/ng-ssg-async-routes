@@ -24,7 +24,7 @@ jobs:
         uses: gautemo/fetch-api-data-action@1.1.0
         with:
           url: 'https://api.jsonbin.io/v3/qs/65888398dc746540188845b4'
-          file: 'src/assets/routes.txt'
+          file: '/home/runner/work/ng-ssg-async-routes/ng-ssg-async-routes/src/assets/routes.txt'
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
