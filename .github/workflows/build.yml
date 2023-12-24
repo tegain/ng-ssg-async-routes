@@ -32,6 +32,8 @@ jobs:
         uses: gautemo/fetch-api-data-action@1.1.0
         with:
           url: 'https://api.jsonbin.io/v3/qs/65888398dc746540188845b4'
-          file: '/home/runner/work/ng-ssg-async-routes/ng-ssg-async-routes/src/assets/routes.txt'
+          file: 'routes.txt'
+      - name: Info
+        run: pwd
       - name: Build
         run: npm run build --if-present
