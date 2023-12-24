@@ -30,7 +30,7 @@
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": {
-              "routesFile": "src/assets/routes.txt"
+              "routesFile": "routes.txt"
             },
             "ssr": {
               "entry": "server.ts"
