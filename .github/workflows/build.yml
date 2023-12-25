@@ -28,25 +28,13 @@ jobs:
           cache: 'npm'
       - name: Install
         run: npm ci
-      - name: Fetch Data to File
-        uses: gautemo/fetch-api-data-action@1.1.0
+      - name: Angular SSG async routes file
+        uses: tegain/angular-ssg-async-routes-file-action@1.0.0
         with:
-          url: 'https://api.jsonbin.io/v3/qs/65888398dc746540188845b4'
+          url: 'https://api.jsonbin.io/v3/qs/65898bbfdc74654018888f7c'
+          responsePath: 'record'
           file: 'routes.txt'
-      - name: Info
-        run: pwd
       - name: Build
         run: npm run build --if-present
-      - name: List files
-        id: pl
-        uses: Rishabh510/Path-lister-action@master
-        with:
-          path: "dist"
-          type: ".html"
-
-      - name: Output results
-        run: |
-          echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.pl.outputs.paths }}; do
-          echo $i
-          done
+      - name: List dist files
+        run: ls -R dist/ng-ssg-async
